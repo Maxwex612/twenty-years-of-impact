@@ -95,7 +95,19 @@ const C=[
 
 /* chronological spine: year, label, country, pillar, metric, status, note */
 const TL=[
-[2007,"Thailand program begins","Thailand","people","13,216 people all time","A","Rescue center and outreach in Chiang Rai, later the Baan Kru Nam home."],
+[2006,"The Not For Sale book","United States","social","A movement begins","A","Dave Batstone begins writing the book that helped launch the modern abolitionist movement. It told a generation that slavery had never ended, and that ending it was work they could join. This organization takes its name from that book."],
+[2007,"United States program begins","United States","people","Headquarters","A","The Bay Area: the office, the fundraising, and the first domestic programs."],
+[2010,"Honduras program begins","Honduras","people","15 people all time","P","Children's home and agroforestry training. Ran about a year."],
+[2010,"Not For Sale Japan begins","Japan","people","150 people all time","A","Mariko Yamaoka translates the book into Japanese and starts the awareness work. Incorporated three years later."],
+[2011,"Romania program begins","Romania","people","5,220 people all time","P","Wound down after 2019."],
+[2011,"Netherlands program begins","Netherlands","people","4,561 people all time","A","Saskia and Toos begin the Amsterdam work, four years before Dignita opens its doors."],
+[2012,"India program begins","India","people","108 people all time","P","Children's camp and education."],
+[2013,"Not For Sale Japan incorporates","Japan","social","Legal formation","A","Incorporated with Latham & Watkins, three years after the work began."],
+[2019,"Mozambique program begins","Mozambique","people","84,701 people all time","A","Coastal outreach in Tofo."],
+[2019,"Australia program begins","Australia","people","Awareness events","A","Awareness and fundraising events. Tree planting followed in 2022."],
+[2020,"Rwanda program begins","Rwanda","people","12,459 people all time","A","Producer cooperatives followed in 2022."],
+[2022,"DRC program begins","DRC","people","877 people all time","A","Cobalt supply-chain redesign in the mining communities. Reforestation began the same year."],
+[2007,"Thailand, Laos and Myanmar programs begin","Thailand · Laos · Myanmar","people","13,216 people all time","A","Kru Nam's work across the Mekong border region, all of it from the founding year: a rescue center and outreach in Chiang Rai that became the Baan Kru Nam home, and preventative outreach into poverty-stricken communities in Laos and Myanmar. The Laos and Myanmar counts are still pending."],
 [2009,"Free2Work","United States","social","559 brands graded","A","Supply-chain grading A to F. Continues today via Baptist World Aid."],
 [2010,"Uganda program begins","Uganda","people","139,182 people all time","A","The largest program by reach, through settlements in western Uganda."],
 [2010,"South Africa program begins","South Africa","people","123,308 people all time","A","Youth livelihood and sport-based prevention out of Cape Town."],
@@ -103,7 +115,8 @@ const TL=[
 [2011,"REBBL","Peru","social","$2M+ returned to Not For Sale","A","Born at the Montara Circle. Brazil-nut sourcing via AFIMAD."],
 [2009,"AFIMAD","Peru","social","Brazil nut cooperative","A","Formed by Indigenous communities in Madre de Dios and registered in 2009 as the Madre de Dios Indigenous Forestry Association. Supplies the Brazil nut that REBBL sources."],
 [2011,"SlaveryMap","United States","social","Relaunching","A","Crowd-sourced map of trafficking incidents."],
-[2012,"Peru program begins","Peru","people","35,216 people all time","A","Madre de Dios and Lima."],
+[2007,"Peru program begins","Peru","people","35,216 people all time","A","Lima, from the founding year. The Amazon work followed in 2012."],
+[2012,"Peru Amazon program begins","Peru","people","Madre de Dios","A","The move upriver into Madre de Dios, where the Brazil nut and reforestation work is rooted."],
 [2012,"Farmhopping","Bulgaria","social","600 farms at peak","A","Organic farm-to-consumer in Sofia. Not For Sale holds an equity stake."],
 [2012,"Home Soup","Netherlands","social","650+ HEMA stores","P","Soup program in the Red Light District. The origin of Dignita. Closed 2015."],
 [2012,"TexOps","El Salvador","social","710 jobs","P","Apparel supply-chain redesign. Closed 2013."],
@@ -114,7 +127,7 @@ const TL=[
 [2015,"Dignita Amsterdam","Netherlands","social","263 trainees","A","Restaurant and training program. Counted inside the Netherlands total."],
 [2015,"Not For Sale Ale","Sweden","social","Closed 2017","P","Craft beer collaboration for awareness and fundraising."],
 [2018,"Dignita San Francisco","United States","social","Pilot only","P","Bay Area events iteration."],
-[2019,"Vietnam program begins","Vietnam","people","4,253 people all time","A","Child rescue and reintegration out of Hanoi."],
+[2015,"Vietnam program begins","Vietnam","people","4,253 people all time","A","Child rescue and reintegration out of Hanoi, through Blue Dragon."],
 [2019,"Entrepreneurship Challenge","Uganda","social","Uganda and Rwanda","A","Cooperative formation and small-enterprise incubation."],
 [2021,"Peru reforestation","Peru","planet","2,754 trees · 693 t","A","Camino Verde; Protect Amazonian Biodiversity. Runs to 2032."],
 [2022,"DRC cooperative reforestation","DRC","planet","451,000 trees","A","The largest planting by volume. Carbon not yet added to the total."],
@@ -132,22 +145,14 @@ const TL=[
 [2024,"Tanzania reforestation","Tanzania","planet","18,500 trees · 2,775 t","A","Usambara Biodiversity Conservation. The largest site planted with Tree-Nation, our tree-planting partner."],
 [2024,"Nicaragua reforestation","Nicaragua","planet","1,105 trees · 622 t","A","CommuniTree."],
 [2024,"Madagascar reforestation","Madagascar","planet","10 trees","A","Eden Reforestation. Gifted; credit belongs to others."],
-[2007,"Laos program begins","Laos","people","Count pending","W","Survivor support and prevention, begun alongside the Thailand program. People count pending."],
-[2007,"Myanmar program begins","Myanmar","people","Count pending","W","Survivor support and prevention, begun alongside the Thailand program. People count pending."],
 [2022,"Regenerate Technology Global","Italy","social","Battery recycling","A","Circular-economy minerals recovery. Formally established as a Nevada corporation in March 2023; its UK subsidiary, Ever Resource, was founded in 2020."],
 [2023,"M2i Global","United States","social","Sustainable minerals","A","Originally incorporated in June 2018 as Inky Inc., with operations from around 2022, and relaunched as M2i Global in June 2023."],
 [2023,"FAIR Administration","Netherlands","social","Accountancy","A","An Amsterdam social enterprise under Stichting Dignita, the Dignita Foundation, operating publicly by early 2023."],
-[2025,"Bought and Burned (working Title)","United States","social","In development","A","Book in progress."]];
+[2025,"Bought and Burned (working title)","United States","social","In development","A","Mark Wexler's book on the link between slavery, cattle and deforestation. In progress."],
+[2025,"The Art of Being a REBBL","United States","social","In development","A","Ten rules to becoming a punk capitalist, co-authored by Mark Wexler and Dr. David Batstone."],
+[2025,"The Changemaker Chronicles","Global","social","In development","A","Documentary series with Terra Mater Studios, featuring Not For Sale and M2i Global."]];
 
-const UNDATED=[
-["Mozambique","people","84,701 people all time","Coastal outreach in Tofo. The tracker holds reporting periods for this program but not a start date."],
-["Rwanda","people","12,459 people all time","The tracker holds reporting periods for this program but not a start date."],
-["Romania","people","5,220 people all time","Wound down after 2019. The tracker holds no start date."],
-["Netherlands","people","4,561 people all time","Predates Dignita; the tracker holds no start date for the country program itself."],
-["DRC","people","877 people all time","Cobalt supply-chain redesign. The tracker holds no start date."],
-["Japan","people","150 people all time","Awareness and fundraising events."],
-["India","people","108 people all time","Children's camp and education. Past."],
-["Honduras","people","15 people all time","Children's home and agroforestry training. Past."]];
+const UNDATED=[];
 
 const STATS=[
 ["491,042","People supported","since 2007","verified",
@@ -170,8 +175,8 @@ const GAPS=[
  "Carbon sequestered reflects figures verified by Tree-Nation, our tree-planting and implementing partner, only. The DRC cooperative planted roughly 451,000 trees, nine times Tree-Nation's volume, and its carbon has not been calculated. The number published here is therefore an understatement, and we would rather publish it low and marked than estimate it high."],
 ["Eleven countries have no direct and indirect split","Including the United States, DRC and Bulgaria",
  "The split was introduced after those rows were first recorded, and the historic entries were consolidated before it existed. Reconstructing it would mean going back to partners for records that in some cases are more than a decade old."],
-["Most country programs have no start date","Mozambique, Rwanda, Romania, the Netherlands, DRC and others",
- "The tracker was built to record reporting periods, not program histories. It can tell you how many people a country reached in FY22-23 but not what year the work began. That is why part of the timeline on this page sits in an undated group."],
+["Start dates come from memory, not the tracker","Every country program",
+ "The tracker was built to record reporting periods, not program histories. It can tell you how many people a country reached in FY22-23 but not what year the work began. The years on this page were reconstructed with the founders and country directors in November 2026 and are the best record that exists, but they are recollection rather than documentation, and the tracker still does not hold them."],
 ["There is a three-year reporting gap","2015 to 2017",
  "Those years were consolidated into a single carry-forward line in the source file before the current tracker existed. The totals are carried, so no people are missing from the headline, but the detail of which country and which year cannot be recovered from what was kept."],
 ["The country count has been published two ways","27 in the 2025 report, 33 all-time",
@@ -189,7 +194,7 @@ window.NFS.WALL=["REBBL","Free2Work","SlaveryMap","Dignita (Amsterdam)","Dignita
 "Farmhopping","Home Soup","FAIR Administration","AFIMAD","Entrepreneurship Challenge",
 "Rwanda cooperatives","Z Shoes Organic","TexOps","AppleTree","Reinvent","Not For Sale Ale",
 "Free2Play","Garment Workshop (Cambodia)","Regenerate Technology Global","M2i Global",
-"Bought and Burned (working Title)"];
+"The Art of Being a REBBL","The Changemaker Chronicles"];
 window.NFS.SCENES=[
  {t:"Twenty Years of Impact",kind:"title"},
  {n:"491,042",k:"People supported since 2007",s:"One point of light for every person",kind:"num",
@@ -198,7 +203,7 @@ window.NFS.SCENES=[
   img:"ph-planet.jpg"},
  {n:"753",k:"Square miles of Amazon protected every year",s:"Madre de Dios, Peru",kind:"num",
   img:"ph-forest.jpg"},
- {kind:"wall",k:"Social innovations",s:"Twenty-one ventures, cooperatives, platforms and campaigns"}];
+ {kind:"wall",k:"Ventures",s:"Twenty-two ventures, cooperatives, platforms and campaigns"}];
 
 /* Links to pages on the site (or an initiative's own site) with more detail.
    Key = exact country name or venture name as used above. Add rows here and the

@@ -1,3 +1,4 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,7 +52,7 @@ main{position:relative;z-index:2}
 .ch{height:240vh;position:relative}
 .ch .pin{position:sticky;top:0;height:100svh;display:flex;align-items:center;pointer-events:none;overflow:hidden}
 .chin{max-width:1160px;margin:0 auto;padding:0 clamp(24px,5vw,64px);width:100%}
-.ck{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;
+.ck{font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;
  margin-bottom:20px;opacity:0;transform:translateY(12px);transition:.7s}
 .ch1{font-family:var(--serif);font-weight:300;font-size:clamp(34px,5.6vw,70px);max-width:11ch;line-height:1.02;
  letter-spacing:-.034em;opacity:0;transform:translateY(20px);transition:.9s .08s}
@@ -61,6 +62,11 @@ main{position:relative;z-index:2}
 .cask{margin-top:24px;opacity:0;transform:translateY(16px);transition:.9s .32s;display:flex;flex-direction:column;align-items:flex-start;gap:13px;max-width:31ch;pointer-events:auto}
 .cask .t{font-family:var(--sans);font-size:clamp(15px,1.6vw,17px);line-height:1.56}
 .on-sand .cask .t{color:var(--ink)}.on-dark .cask .t{color:rgba(247,242,233,.82)}
+.hfig{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.hfig li{display:flex;align-items:baseline;gap:11px}
+.hfig b{font-family:var(--serif);font-weight:300;font-size:clamp(21px,2.6vw,28px);line-height:1;
+ color:var(--acc);font-variant-numeric:tabular-nums;min-width:4.7em;text-align:right;flex:none}
+.hfig s{text-decoration:none;font-size:clamp(12.5px,1.35vw,14px);color:var(--mut);line-height:1.32}
 .askbtn{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;padding:12px 22px;border-radius:30px;background:var(--or);color:#2a1206;border:0;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:8px;box-shadow:0 6px 18px rgba(245,130,31,.28)}
 .askbtn:hover{background:#ffb257;transform:translateY(-2px)}
 .on-dark .ck{color:rgba(247,242,233,.6)}
@@ -90,7 +96,13 @@ main{position:relative;z-index:2}
 .dot.act{color:var(--acc)}.dot.act.dk{color:var(--or2)}
 .dot.act i{background:var(--or);transform:scale(1.5)}
 @media(max-width:820px){.dots{right:11px;gap:12px}.dot span{display:none}.dot i{width:6px;height:6px}}
-@media(max-width:760px){.ch .pin{align-items:flex-start}.chin{padding-top:clamp(78px,12vh,118px)}.ch1{font-size:30px;line-height:1.07}.cs{margin-top:18px;font-size:15px}.figs{margin-top:20px;gap:22px}}
+@media(max-width:760px){.ch .pin{align-items:flex-start}.chin{padding-top:clamp(78px,12vh,118px)}.ch1{font-size:30px;line-height:1.07}.cs{margin-top:18px;font-size:15px}.figs{margin-top:20px;gap:22px}
+ #sun{left:76%}
+ .cask{max-width:30ch;margin-top:22px;gap:18px}
+ .cask .t{font-size:15.5px;line-height:1.52}
+ .askbtn{padding:14px 24px}}
+.grain{position:fixed;inset:0;z-index:40;pointer-events:none;opacity:.05;
+ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");background-size:160px 160px;mix-blend-mode:overlay}
 .pline{position:fixed;left:0;bottom:0;height:2px;background:var(--or);z-index:21;width:0}
 .pp{position:fixed;bottom:74px;left:50%;transform:translateX(-50%);z-index:22;width:46px;height:46px;
  border-radius:50%;border:1px solid rgba(46,26,18,.16);background:rgba(247,242,233,.82);
@@ -121,7 +133,17 @@ main{position:relative;z-index:2}
 .cue.gone{opacity:0}
 
 .atlas{position:relative;height:100svh;background:#1C140E;overflow:hidden;z-index:2}
-#mapslot{position:absolute;inset:0;transition:transform .45s cubic-bezier(.4,0,.2,1)}
+.gmorph{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none;
+ opacity:1;transition:opacity .55s cubic-bezier(.4,0,.6,1)}
+.gmorph.gone{opacity:0}
+.gmorph .gland{fill:#3A2C1F;stroke:#5E4A33;stroke-width:.6;stroke-linejoin:round}
+.gmorph .ggrat{fill:none;stroke:#7A6142;stroke-width:.7}
+.gmorph .gsphere{fill:#241A12}
+.gmorph .grim{fill:none;stroke:#F5821F;stroke-width:1.7}
+#mapslot{position:absolute;inset:0;transition:transform .22s cubic-bezier(.32,0,.14,1),opacity .4s ease}
+.atlas.morphing #mapslot{opacity:0;transition:opacity .55s ease .08s}
+.atlas.morphing .alabel,.atlas.morphing .mlegend,.atlas.morphing .hintp,
+.atlas.morphing .zc,.atlas.morphing .ashare,.atlas.morphing .acont{opacity:0;transition:opacity .4s ease}
 .atlas.open #mapslot{transform:translateX(-13%)}
 svg.world{width:100%;height:100%;display:block}
 .cpath{fill:#2A2017;stroke:#1C140E;stroke-width:.35}
@@ -129,16 +151,29 @@ svg.world{width:100%;height:100%;display:block}
 .cpath.has:hover{fill:#503C28}
 .cpath.sel{fill:#4A3220}
 .mk{cursor:pointer}
+.atlas.landing .mk{animation:mkin .55s cubic-bezier(.2,.8,.3,1) both}
+@keyframes mkin{0%{opacity:0}100%{opacity:1}}
+.atlas.landing .mk circle.g,.atlas.landing .mk circle.t{animation:mkpop .55s cubic-bezier(.2,.9,.3,1) both;
+ transform-box:fill-box;transform-origin:center}
+@keyframes mkpop{0%{transform:scale(.25)}100%{transform:scale(1)}}
 .mk circle.hit{fill:transparent}
 .mk circle.g{fill:rgba(245,130,31,.22);stroke:var(--or);stroke-width:.8;transition:.2s}
 .mk circle.t{fill:rgba(176,112,23,.26);stroke:var(--gr);stroke-width:.8;transition:.2s}
 .mk circle.core{fill:var(--or2)}
 .mk:hover circle.g,.mk:hover circle.t{fill:rgba(245,130,31,.6)}
-.mk.sel circle.g,.mk.sel circle.t{fill:var(--or);stroke:var(--cream);stroke-width:1.2}
+.mk.sel circle.g,.mk.sel circle.t{fill:var(--or);stroke:var(--cream);stroke-width:1.7;
+ filter:drop-shadow(0 0 7px rgba(255,179,107,.85))}
+.mk.sel circle.core{fill:#fff;r:1.8}
+.mk circle.pulse{fill:none;stroke:var(--cream);stroke-width:1.3;opacity:0;pointer-events:none;
+ transform-box:fill-box;transform-origin:center}
+.mk.sel circle.pulse{animation:mkpulse .95s ease-out 2}
+@keyframes mkpulse{0%{opacity:.9;transform:scale(1)}100%{opacity:0;transform:scale(2.5)}}
 .alabel{position:absolute;top:78px;left:28px;z-index:4;pointer-events:none}
 .alabel .k{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(247,242,233,.5)}
 .alabel .h{font-family:var(--serif);font-weight:300;font-size:clamp(25px,3.6vw,42px);color:var(--cream);
  margin-top:8px;letter-spacing:-.025em;line-height:1.05;max-width:13ch}
+.alabel .ascale{font-family:var(--mono);font-size:10px;letter-spacing:.07em;
+ color:rgba(247,242,233,.6);margin-top:10px}
 .mlegend{position:absolute;bottom:20px;left:28px;z-index:4;display:flex;gap:18px;flex-wrap:wrap;
  font-family:var(--mono);font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:rgba(247,242,233,.5)}
 .mlegend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px;vertical-align:-1px}
@@ -191,6 +226,20 @@ svg.world{width:100%;height:100%;display:block}
 .atop{position:absolute;top:80px;left:50%;transform:translateX(-50%);z-index:5;display:none}
 .atop.show{display:block}
 /* zoom controls */
+.zhint{position:absolute;inset:0;z-index:6;display:grid;place-items:center;pointer-events:none;
+ opacity:0;transition:opacity .3s;background:rgba(14,11,8,.40)}
+.zhint.on{opacity:1}
+.zhint span{font-family:var(--mono);font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;
+ color:var(--cream);border:1px solid rgba(247,242,233,.26);border-radius:30px;padding:13px 24px;
+ background:rgba(14,11,8,.74);backdrop-filter:blur(6px)}
+.acont{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);z-index:5;cursor:pointer;
+ display:flex;flex-direction:column;align-items:center;gap:6px;background:none;border:0;padding:8px 16px;
+ font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+ color:rgba(247,242,233,.5);transition:.25s}
+.acont:hover{color:var(--or2)}
+.acont svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round}
+.atlas.open .acont{opacity:0;pointer-events:none}
+@media(max-width:820px){.zhint{display:none}.acont{display:none}}
 .zc{position:absolute;right:24px;top:84px;z-index:4;display:flex;flex-direction:column;gap:6px}
 .zc button{width:34px;height:34px;border-radius:9px;border:1px solid rgba(247,242,233,.18);
  background:rgba(36,20,14,.6);color:var(--cream);font-size:17px;line-height:1;cursor:pointer;
@@ -211,16 +260,16 @@ svg.world{width:100%;height:100%;display:block}
  color:var(--gr);border:1px solid rgba(176,112,23,.4);background:rgba(176,112,23,.1)}
 .vbadge::before{content:"✓"}
 /* share row */
-.ashare{position:absolute;left:28px;bottom:54px;z-index:4;display:flex;gap:8px;align-items:center}
+.ashare{position:absolute;right:24px;top:178px;z-index:4;display:flex;flex-direction:column;gap:8px;align-items:center}
 .ashare .lb{font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:rgba(247,242,233,.4);margin-right:4px}
 .ashare a{width:30px;height:30px;border-radius:50%;border:1px solid rgba(247,242,233,.2);
  display:grid;place-items:center;color:rgba(247,242,233,.7);transition:.2s;text-decoration:none}
 .ashare a:hover{background:var(--or);border-color:var(--or);color:var(--deep)}
 .ashare svg{width:14px;height:14px;fill:currentColor}
-.hintp{position:absolute;bottom:20px;right:28px;z-index:4;font-family:var(--mono);font-size:9.5px;
+.hintp{position:absolute;bottom:40px;left:28px;right:auto;text-align:left;z-index:4;font-family:var(--mono);font-size:9.5px;
  letter-spacing:.09em;text-transform:uppercase;color:rgba(247,242,233,.38)}
 .info{position:absolute;top:0;right:0;bottom:0;width:min(432px,92vw);z-index:6;background:var(--sand);
- transform:translateX(102%);transition:transform .45s cubic-bezier(.4,0,.2,1);overflow-y:auto;
+ transform:translateX(102%);transition:transform .22s cubic-bezier(.32,0,.14,1);overflow-y:auto;
  box-shadow:-20px 0 60px rgba(0,0,0,.45)}
 .info.on{transform:none}
 .ihead{padding:70px 26px 20px;border-bottom:1px solid var(--line)}
@@ -261,7 +310,8 @@ svg.world{width:100%;height:100%;display:block}
 .dstat .s{font-family:var(--mono);font-size:9px;letter-spacing:.09em;text-transform:uppercase;color:var(--mut);margin-top:5px}
 
 .page{position:relative;z-index:2;background:var(--sand)}
-section.band{padding:92px 0}
+section.band{padding:92px 0;scroll-margin-top:72px}
+.apxopen{padding-bottom:44px;margin-bottom:44px;border-bottom:1px solid var(--line)}
 .sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(176px,1fr));border-top:1px solid var(--line);margin-top:34px}
 .sitem{padding:22px 20px 22px 0;border-bottom:1px solid var(--line2)}
 .sitem .v{font-family:var(--serif);font-weight:300;font-size:40px;line-height:1;letter-spacing:-.035em}
@@ -309,18 +359,29 @@ section.band{padding:92px 0}
 .gap{display:grid;grid-template-columns:1fr 1.25fr;gap:28px;padding:30px 0;border-bottom:1px solid rgba(247,242,233,.14)}
 @media(max-width:820px){.gap{grid-template-columns:1fr;gap:12px}}
 @media(max-width:760px){
- .mlegend{bottom:14px;left:14px;right:72px;gap:7px 14px;font-size:8.5px}
+ .mlegend{bottom:12px;left:14px;right:14px;gap:6px 14px;font-size:8.5px}
  .mlegend .prop{display:none}
- .hintp{bottom:14px;right:14px;left:auto;max-width:120px;text-align:right;font-size:8px;line-height:1.35}
- .ashare{left:14px;bottom:52px;gap:6px}
- .ashare .lb{display:none}
- .ashare a{width:34px;height:34px}
+ .hintp{bottom:32px;left:14px;right:auto;text-align:left;max-width:none;font-size:8px;line-height:1.3}
+ .ashare{display:none}
  .zc{top:auto;bottom:92px;right:14px}
- .info{width:92vw;max-width:none}
- .alabel{display:none}
+ .info{top:auto;left:0;right:0;bottom:0;width:auto;max-width:none;height:56vh;
+  border-radius:16px 16px 0 0;transform:translateY(103%);
+  transition:transform .26s cubic-bezier(.32,0,.14,1);
+  box-shadow:0 -16px 44px rgba(0,0,0,.5)}
+ .info::before{content:"";position:absolute;top:8px;left:50%;width:38px;height:4px;
+  margin-left:-19px;border-radius:2px;background:rgba(43,32,22,.22);z-index:10}
+ .iphoto{display:none}                 /* the sheet is short: lead with the numbers */
+ .ihead{padding:26px 20px 16px}
+ .iclose{position:sticky;display:block;top:10px;margin:10px 12px -44px auto;
+  width:34px;height:34px;font-size:15px;
+  border-color:rgba(43,32,22,.3);background:rgba(246,239,226,.9);color:var(--ink);
+  -webkit-backdrop-filter:none;backdrop-filter:none}
+ .atlas:has(.info.on) .alabel{opacity:0}   /* clear the headline off the open marker */
+ .alabel{display:block;top:96px;left:14px;right:14px}
+ .alabel .h{font-size:21px}
+ .alabel .ascale{font-size:8.5px;margin-top:6px}
  .atop{top:70px;width:92vw}
  .atop .sres{max-height:240px}
- .iclose{position:fixed;top:auto;bottom:calc(24px + env(safe-area-inset-bottom));right:20px;width:50px;height:50px;font-size:21px;background:rgba(20,12,8,.8);box-shadow:0 6px 20px rgba(0,0,0,.38);border-color:rgba(255,255,255,.55)}
 }
 .gap:first-of-type{border-top:1px solid rgba(247,242,233,.14)}
 .gtitle{font-family:var(--serif);font-weight:300;font-size:25px;line-height:1.18;color:var(--cream);letter-spacing:-.02em}
@@ -337,10 +398,15 @@ nav.dk .brand span{color:rgba(247,242,233,.7)}
 .brand{display:flex;align-items:center;gap:10px}
 .bdot{width:27px;height:27px;display:block;flex:none}
 .brand span{font-family:var(--mono);font-size:10px;letter-spacing:.17em;text-transform:uppercase;color:var(--mut);transition:.4s}
+:focus-visible{outline:2px solid var(--or);outline-offset:3px;border-radius:4px}
+.atlas :focus-visible,.dark :focus-visible,.info :focus-visible{outline-color:var(--or2)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;
+ animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+ .ly,.grain{transition:none!important}}
 </style>
-</head>
 <body>
 
+<div class="grain" aria-hidden="true"></div>
 <div id="stage">
   <div id="land">
     <div id="sun"><img id="sunmark" src="sunmark.png" alt=""></div>
@@ -352,23 +418,23 @@ nav.dk .brand span{color:rgba(247,242,233,.7)}
           <stop offset="100%" stop-color="#F6ECD6" stop-opacity="0"/>
         </linearGradient>
       </defs>
-      <g class="hl"><path fill="#F3C197" d="M0 226C120 196 240 206 360 222 480 238 560 190 680 204 800 218 900 246 1020 222 1110 204 1160 214 1200 224L1200 520 0 520Z"/></g>
+      <g class="hl"><path fill="#F3C197" d="M0 196C9 196 9 208 18 208C27 208 27 229 36 229C45 229 45 239 54 239C63 239 63 248 72 248C81 248 81 252 90 252C99 252 99 249 108 249C117 249 117 241 126 241C135 241 135 241 144 241C153 241 153 249 162 249C171 249 171 253 180 253C189 253 189 250 198 250C207 250 207 242 216 242C225 242 225 232 234 232C243 232 243 214 252 214C261 214 261 199 270 199C279 199 279 197 288 197C297 197 297 209 306 209C315 209 315 227 324 227C333 227 333 241 342 241C351 241 351 251 360 251C369 251 369 251 378 251C387 251 387 244 396 244C405 244 405 240 414 240C423 240 423 240 432 240C441 240 441 242 450 242C459 242 459 242 468 242C477 242 477 237 486 237C495 237 495 231 504 231C513 231 513 217 522 217C531 217 531 204 540 204C549 204 549 196 558 196C567 196 567 196 576 196C585 196 585 201 594 201C603 201 603 210 612 210C621 210 621 222 630 222C639 222 639 232 648 232C657 232 657 240 666 240C675 240 675 243 684 243C693 243 693 250 702 250C711 250 711 254 720 254C729 254 729 259 738 259C747 259 747 257 756 257C765 257 765 255 774 255C783 255 783 244 792 244C801 244 801 229 810 229C819 229 819 216 828 216C837 216 837 208 846 208C855 208 855 212 864 212C873 212 873 214 882 214C891 214 891 217 900 217C909 217 909 218 918 218C927 218 927 223 936 223C945 223 945 224 954 224C963 224 963 227 972 227C981 227 981 227 990 227C999 227 999 228 1008 228C1017 228 1017 224 1026 224C1035 224 1035 216 1044 216C1053 216 1053 212 1062 212C1071 212 1071 206 1080 206C1089 206 1089 203 1098 203C1107 203 1107 198 1116 198C1125 198 1125 196 1134 196C1143 196 1143 197 1152 197C1161 197 1161 201 1170 201C1179 201 1179 203 1188 203L1200 520L0 520Z"/></g>
       <rect class="ms" x="-80" y="206" width="1360" height="62" fill="url(#mg)"/>
-      <g class="hl"><path fill="#E59A66" d="M0 276C110 250 210 282 330 272 450 262 520 228 640 252 760 276 860 300 980 272 1080 249 1150 262 1200 270L1200 520 0 520Z"/></g>
+      <g class="hl"><path fill="#E59A66" d="M0 251C9 251 9 250 18 250C27 250 27 249 36 249C45 249 45 255 54 255C63 255 63 263 72 263C81 263 81 274 90 274C99 274 99 281 108 281C117 281 117 288 126 288C135 288 135 291 144 291C153 291 153 297 162 297C171 297 171 300 180 300C189 300 189 305 198 305C207 305 207 302 216 302C225 302 225 300 234 300C243 300 243 290 252 290C261 290 261 278 270 278C279 278 279 267 288 267C297 267 297 261 306 261C315 261 315 263 324 263C333 263 333 265 342 265C351 265 351 268 360 268C369 268 369 271 378 271C387 271 387 275 396 275C405 275 405 275 414 275C423 275 423 276 432 276C441 276 441 276 450 276C459 276 459 276 468 276C477 276 477 272 486 272C495 272 495 265 504 265C513 265 513 264 522 264C531 264 531 259 540 259C549 259 549 256 558 256C567 256 567 251 576 251C585 251 585 250 594 250C603 250 603 251 612 251C621 251 621 254 630 254C639 254 639 259 648 259C657 259 657 260 666 260C675 260 675 254 684 254C693 254 693 250 702 250C711 250 711 252 720 252C729 252 729 258 738 258C747 258 747 261 756 261C765 261 765 264 774 264C783 264 783 265 792 265C801 265 801 267 810 267C819 267 819 264 828 264C837 264 837 264 846 264C855 264 855 266 864 266C873 266 873 270 882 270C891 270 891 273 900 273C909 273 909 276 918 276C927 276 927 282 936 282C945 282 945 285 954 285C963 285 963 286 972 286C981 286 981 286 990 286C999 286 999 293 1008 293C1017 293 1017 296 1026 296C1035 296 1035 294 1044 294C1053 294 1053 291 1062 291C1071 291 1071 290 1080 290C1089 290 1089 287 1098 287C1107 287 1107 279 1116 279C1125 279 1125 273 1134 273C1143 273 1143 265 1152 265C1161 265 1161 261 1170 261C1179 261 1179 256 1188 256L1200 520L0 520Z"/></g>
       <rect class="ms" x="-80" y="258" width="1360" height="60" fill="url(#mg)"/>
-      <g class="hl"><path fill="#D1794B" d="M0 322C140 300 230 334 350 326 470 318 540 288 660 308 780 328 880 352 1000 326 1100 304 1160 316 1200 322L1200 520 0 520Z"/></g>
+      <g class="hl"><path fill="#D1794B" d="M0 306C9 306 9 305 18 305C27 305 27 301 36 301C45 301 45 301 54 301C63 301 63 302 72 302C81 302 81 304 90 304C99 304 99 309 108 309C117 309 117 308 126 308C135 308 135 304 144 304C153 304 153 301 162 301C171 301 171 303 180 303C189 303 189 307 198 307C207 307 207 310 216 310C225 310 225 311 234 311C243 311 243 314 252 314C261 314 261 315 270 315C279 315 279 313 288 313C297 313 297 313 306 313C315 313 315 314 324 314C333 314 333 317 342 317C351 317 351 319 360 319C369 319 369 323 378 323C387 323 387 328 396 328C405 328 405 330 414 330C423 330 423 331 432 331C441 331 441 332 450 332C459 332 459 337 468 337C477 337 477 339 486 339C495 339 495 336 504 336C513 336 513 334 522 334C531 334 531 333 540 333C549 333 549 329 558 329C567 329 567 324 576 324C585 324 585 318 594 318C603 318 603 312 612 312C621 312 621 309 630 309C639 309 639 311 648 311C657 311 657 317 666 317C675 317 675 321 684 321C693 321 693 320 702 320C711 320 711 322 720 322C729 322 729 320 738 320C747 320 747 317 756 317C765 317 765 312 774 312C783 312 783 307 792 307C801 307 801 306 810 306C819 306 819 303 828 303C837 303 837 307 846 307C855 307 855 310 864 310C873 310 873 312 882 312C891 312 891 305 900 305C909 305 909 302 918 302C927 302 927 306 936 306C945 306 945 315 954 315C963 315 963 321 972 321C981 321 981 324 990 324C999 324 999 327 1008 327C1017 327 1017 328 1026 328C1035 328 1035 330 1044 330C1053 330 1053 332 1062 332C1071 332 1071 334 1080 334C1089 334 1089 331 1098 331C1107 331 1107 325 1116 325C1125 325 1125 324 1134 324C1143 324 1143 321 1152 321C1161 321 1161 316 1170 316C1179 316 1179 311 1188 311L1200 520L0 520Z"/></g>
       <rect class="ms" x="-80" y="306" width="1360" height="56" fill="url(#mg)"/>
-      <g class="hl"><path fill="#B05A38" d="M0 372C120 352 250 386 370 374 490 362 560 338 680 358 800 378 900 400 1020 376 1110 358 1160 368 1200 374L1200 520 0 520Z"/></g>
+      <g class="hl"><path fill="#B05A38" d="M0 382C9 382 9 377 18 377C27 377 27 373 36 373C45 373 45 368 54 368C63 368 63 365 72 365C81 365 81 362 90 362C99 362 99 364 108 364C117 364 117 368 126 368C135 368 135 371 144 371C153 371 153 371 162 371C171 371 171 372 180 372C189 372 189 371 198 371C207 371 207 367 216 367C225 367 225 363 234 363C243 363 243 359 252 359C261 359 261 358 270 358C279 358 279 356 288 356C297 356 297 361 306 361C315 361 315 363 324 363C333 363 333 364 342 364C351 364 351 359 360 359C369 359 369 357 378 357C387 357 387 362 396 362C405 362 405 367 414 367C423 367 423 372 432 372C441 372 441 374 450 374C459 374 459 377 468 377C477 377 477 377 486 377C495 377 495 378 504 378C513 378 513 380 522 380C531 380 531 382 540 382C549 382 549 378 558 378C567 378 567 374 576 374C585 374 585 373 594 373C603 373 603 370 612 370C621 370 621 367 630 367C639 367 639 361 648 361C657 361 657 359 666 359C675 359 675 360 684 360C693 360 693 362 702 362C711 362 711 364 720 364C729 364 729 363 738 363C747 363 747 361 756 361C765 361 765 360 774 360C783 360 783 361 792 361C801 361 801 365 810 365C819 365 819 365 828 365C837 365 837 365 846 365C855 365 855 366 864 366C873 366 873 368 882 368C891 368 891 368 900 368C909 368 909 363 918 363C927 363 927 358 936 358C945 358 945 356 954 356C963 356 963 359 972 359C981 359 981 363 990 363C999 363 999 367 1008 367C1017 367 1017 367 1026 367C1035 367 1035 366 1044 366C1053 366 1053 359 1062 359C1071 359 1071 357 1080 357C1089 357 1089 358 1098 358C1107 358 1107 363 1116 363C1125 363 1125 368 1134 368C1143 368 1143 366 1152 366C1161 366 1161 367 1170 367C1179 367 1179 364 1188 364L1200 520L0 520Z"/></g>
       <rect class="ms" x="-80" y="356" width="1360" height="52" fill="url(#mg)"/>
-      <g class="hl"><path fill="#8A4428" d="M0 428C130 408 240 438 360 428 480 418 560 396 680 414 800 432 900 452 1020 430 1110 413 1160 422 1200 428L1200 520 0 520Z"/></g>
+      <g class="hl"><path fill="#8A4428" d="M0 433C9 433 9 432 18 432C27 432 27 429 36 429C45 429 45 428 54 428C63 428 63 427 72 427C81 427 81 424 90 424C99 424 99 419 108 419C117 419 117 418 126 418C135 418 135 419 144 419C153 419 153 419 162 419C171 419 171 421 180 421C189 421 189 421 198 421C207 421 207 420 216 420C225 420 225 419 234 419C243 419 243 419 252 419C261 419 261 422 270 422C279 422 279 422 288 422C297 422 297 423 306 423C315 423 315 424 324 424C333 424 333 425 342 425C351 425 351 424 360 424C369 424 369 419 378 419C387 419 387 417 396 417C405 417 405 416 414 416C423 416 423 418 432 418C441 418 441 421 450 421C459 421 459 424 468 424C477 424 477 424 486 424C495 424 495 422 504 422C513 422 513 418 522 418C531 418 531 417 540 417C549 417 549 418 558 418C567 418 567 422 576 422C585 422 585 425 594 425C603 425 603 423 612 423C621 423 621 423 630 423C639 423 639 421 648 421C657 421 657 422 666 422C675 422 675 420 684 420C693 420 693 420 702 420C711 420 711 423 720 423C729 423 729 428 738 428C747 428 747 434 756 434C765 434 765 439 774 439C783 439 783 441 792 441C801 441 801 439 810 439C819 439 819 437 828 437C837 437 837 434 846 434C855 434 855 433 864 433C873 433 873 433 882 433C891 433 891 434 900 434C909 434 909 434 918 434C927 434 927 429 936 429C945 429 945 423 954 423C963 423 963 418 972 418C981 418 981 418 990 418C999 418 999 420 1008 420C1017 420 1017 423 1026 423C1035 423 1035 428 1044 428C1053 428 1053 431 1062 431C1071 431 1071 431 1080 431C1089 431 1089 429 1098 429C1107 429 1107 425 1116 425C1125 425 1125 421 1134 421C1143 421 1143 421 1152 421C1161 421 1161 423 1170 423C1179 423 1179 425 1188 425L1200 520L0 520Z"/></g>
       <rect class="ms" x="-80" y="412" width="1360" height="46" fill="url(#mg)"/>
-      <g class="hl"><path fill="#5E2E1C" d="M0 478C140 462 250 488 370 480 490 472 570 456 690 470 810 484 910 498 1030 482 1120 470 1165 476 1200 480L1200 520 0 520Z"/></g>
+      <g class="hl"><path fill="#5E2E1C" d="M0 469C9 469 9 471 18 471C27 471 27 474 36 474C45 474 45 476 54 476C63 476 63 474 72 474C81 474 81 475 90 475C99 475 99 474 108 474C117 474 117 474 126 474C135 474 135 472 144 472C153 472 153 472 162 472C171 472 171 474 180 474C189 474 189 478 198 478C207 478 207 483 216 483C225 483 225 486 234 486C243 486 243 488 252 488C261 488 261 486 270 486C279 486 279 484 288 484C297 484 297 482 306 482C315 482 315 481 324 481C333 481 333 482 342 482C351 482 351 482 360 482C369 482 369 482 378 482C387 482 387 478 396 478C405 478 405 474 414 474C423 474 423 471 432 471C441 471 441 471 450 471C459 471 459 473 468 473C477 473 477 475 486 475C495 475 495 478 504 478C513 478 513 480 522 480C531 480 531 481 540 481C549 481 549 479 558 479C567 479 567 476 576 476C585 476 585 473 594 473C603 473 603 472 612 472C621 472 621 474 630 474C639 474 639 476 648 476C657 476 657 476 666 476C675 476 675 475 684 475C693 475 693 473 702 473C711 473 711 471 720 471C729 471 729 471 738 471C747 471 747 473 756 473C765 473 765 477 774 477C783 477 783 479 792 479C801 479 801 478 810 478C819 478 819 476 828 476C837 476 837 474 846 474C855 474 855 473 864 473C873 473 873 474 882 474C891 474 891 476 900 476C909 476 909 478 918 478C927 478 927 475 936 475C945 475 945 474 954 474C963 474 963 472 972 472C981 472 981 472 990 472C999 472 999 471 1008 471C1017 471 1017 473 1026 473C1035 473 1035 475 1044 475C1053 475 1053 474 1062 474C1071 474 1071 473 1080 473C1089 473 1089 472 1098 472C1107 472 1107 472 1116 472C1125 472 1125 470 1134 470C1143 470 1143 471 1152 471C1161 471 1161 473 1170 473C1179 473 1179 476 1188 476L1200 520L0 520Z"/></g>
     </svg>
   </div>
   <div class="ly" id="ly1"><video id="peoplevid" class="lyvid" muted loop playsinline preload="auto" poster="people-poster.jpg"><source src="people.mp4" type="video/mp4"></video></div>
-  <div class="ly" id="ly2"><video id="planetvid" class="lyvid" muted loop playsinline preload="auto" poster="planet-poster.jpg"><source src="planet.mp4" type="video/mp4"></video></div>
-  <div class="ly" id="ly3"><video id="peruvid" class="lyvid" muted loop playsinline autoplay preload="auto" poster="peru-poster.jpg"><source src="peru.mp4" type="video/mp4"></video></div>
-  <div class="ly" id="ly4" style="background:var(--deep)"><video id="rebblvid" class="lyvid" muted loop playsinline autoplay preload="auto" poster="rebbl-poster.jpg"><source src="rebbl.mp4" type="video/mp4"></video></div>
+  <div class="ly" id="ly2"><video id="peruvid" class="lyvid" muted loop playsinline autoplay preload="auto" poster="peru-poster.jpg"><source src="peru.mp4" type="video/mp4"></video></div>
+  <div class="ly" id="ly3"><video id="rebblvid" class="lyvid" muted loop playsinline autoplay preload="auto" poster="rebbl-poster.jpg"><source src="rebbl.mp4" type="video/mp4"></video></div>
+  <div class="ly" id="ly4" style="background:var(--deep)"><video id="planetvid" class="lyvid" muted loop playsinline preload="auto" poster="planet-poster.jpg"><source src="planet.mp4" type="video/mp4"></video></div>
   <canvas id="gl"></canvas>
 </div>
 
@@ -383,21 +449,28 @@ nav.dk .brand span{color:rgba(247,242,233,.7)}
   <svg viewBox="0 0 24 24" class="ic-pause"><rect x="8" y="6" width="3" height="12" rx="1"/><rect x="13" y="6" width="3" height="12" rx="1"/></svg>
   <svg viewBox="0 0 24 24" class="ic-play"><path d="M9 6l9 6-9 6z"/></svg>
 </button>
-<div class="cue" id="cue"><span>Scroll</span><i></i></div>
+<div class="cue" id="cue"><span>Scroll for the story</span><i></i></div>
 
 <main>
   <section class="ch" id="c0"><div class="pin on-sand"><div class="chin">
     <div class="ck">Not For Sale · 2007 — 2027</div>
     <div class="ch1">Twenty Years<br>of <em>Impact</em></div>
-    <div class="cask"><span class="t">As part of our celebration of 20 years of work, we created a tool we call The Atlas. It lets you search our work across the years, the globe, and modalities.</span>
-    <button class="askbtn" id="askjump">Explore the Atlas &rarr;</button></div>
+    <div class="cask">
+      <ul class="hfig">
+        <li><b data-n="491042">491,042</b><s>people supported</s></li>
+        <li><b data-n="505409">505,409</b><s>trees planted</s></li>
+        <li><b data-n="753">753</b><s>sq mi of Amazon, every year</s></li>
+        <li><b data-n="22">22</b><s>ventures, in 33 countries</s></li>
+      </ul>
+      <span class="t">Here is where, when and how.</span>
+      <button class="askbtn" id="askjump">Open the Atlas &rarr;</button></div>
   </div></div></section>
 
   <section class="ch" id="c1"><div class="pin on-dark"><div class="chin">
-    <div class="ck">People</div>
+    <div class="ck">People · 2007</div>
     <div class="ch1">Half a million<br><em>people</em> served.</div>
-    <div class="cs">Since 2007, across 21 countries, we have carried out rescues, provided survivor care, run prevention
-    programs, and created employment to stop people from being exploited in the first place.</div>
+    <div class="cs">Since 2007, across 21 countries, we have carried out rescues, cared for survivors, run
+    prevention programs, and built the jobs that stop people being taken in the first place.</div>
     <div class="figs">
       <div><div class="b">491,042</div><div class="s">Since 2007</div></div>
       <div><div class="b">+10,813</div><div class="s">FY24-25</div></div>
@@ -406,10 +479,28 @@ nav.dk .brand span{color:rgba(247,242,233,.7)}
   </div></div></section>
 
   <section class="ch" id="c2"><div class="pin on-dark"><div class="chin">
-    <div class="ck">Planet</div>
+    <div class="ck">Conservation · 2009</div>
+    <div class="ch1">Seven hundred fifty-three<br><em>square miles</em> conserved.</div>
+    <div class="cs">Since 2009, we have kept the Amazon standing in Madre de Dios, through an Indigenous-run
+    Brazil nut cooperative that makes the forest worth more alive than cleared.</div>
+    <div class="figs">
+      <div><div class="b">753 sq mi</div><div class="s">Protected each year</div></div>
+    </div>
+  </div></div></section>
+
+  <section class="ch" id="c3"><div class="pin on-dark"><div class="chin">
+    <div class="ck">Ventures · 2011</div>
+    <div class="ch1">Twenty-two <em>ventures</em>.</div>
+    <div class="cs">Since 2011, we have built twenty-two ventures, cooperatives and platforms. The surest
+    way to beat an exploitative market is to out-create it.</div>
+    <div class="wallin" id="wallin"></div>
+  </div></div></section>
+
+  <section class="ch" id="c4"><div class="pin on-dark"><div class="chin">
+    <div class="ck">Trees · 2022</div>
     <div class="ch1">Half a million<br><em>trees</em> planted.</div>
-    <div class="cs">Planted since 2022 across fifteen sites, from the Usambara Mountains in Tanzania to our
-    cooperative plantings in the eastern Democratic Republic of the Congo.</div>
+    <div class="cs">Since 2022, we have planted half a million trees across sixteen countries, from the
+    Usambara Mountains in Tanzania to the cooperative plantings in the eastern Democratic Republic of the Congo.</div>
     <div class="figs">
       <div><div class="b">505,409</div><div class="s">Trees since 2022</div></div>
       <div><div class="b">13,301 t</div><div class="s">Carbon sequestered</div></div>
@@ -417,26 +508,11 @@ nav.dk .brand span{color:rgba(247,242,233,.7)}
     </div>
   </div></div></section>
 
-  <section class="ch" id="c3"><div class="pin on-dark"><div class="chin">
-    <div class="ck">Conservation</div>
-    <div class="ch1">Seven hundred fifty-three<br><em>square miles</em> conserved.</div>
-    <div class="cs">Since 2009 we've helped keep the Amazon rainforest in Madre de Dios protected every year through
-    our work to create and maintain an Indigenous-run Brazil nut cooperative.</div>
-    <div class="figs">
-      <div><div class="b">753 sq mi</div><div class="s">Protected each year</div></div>
-    </div>
-  </div></div></section>
-
-  <section class="ch" id="c4"><div class="pin on-dark"><div class="chin">
-    <div class="ck">Social innovations</div>
-    <div class="ch1">Twenty-one <em>ventures</em>.</div>
-    <div class="cs">Built and supported through their growth stage. The way to beat an exploitative market is to build better alternatives.</div>
-    <div class="wallin" id="wallin"></div>
-  </div></div></section>
-
-  <section class="atlas" id="atlas">
+  <section class="atlas morphing" id="atlas">
     <div id="mapslot"></div>
-    <div class="alabel"><div class="k">The atlas</div><div class="h">Thirty-three countries</div></div>
+    <svg class="gmorph" id="gmorph" aria-hidden="true"></svg>
+    <div class="alabel"><div class="h">Thirty-three countries</div>
+      <div class="ascale">491,042 people reached · 505,409 trees planted</div></div>
     <div class="mlegend">
       <span><i style="background:rgba(245,130,31,.7)"></i>People reached</span>
       <span><i style="background:rgba(176,112,23,.7)"></i>Reforestation</span>
@@ -449,41 +525,53 @@ nav.dk .brand span{color:rgba(247,242,233,.7)}
       <a id="shF" target="_blank" rel="noopener" aria-label="Share on Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg></a>
       <a id="shM" aria-label="Share by email"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 011 1v12a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1zm9 7L4 7v1l8 5 8-5V7z"/></svg></a>
     </div>
-    <div class="hintp">Drag sideways to pan · pinch or +/- to zoom</div>
+    <div class="hintp" id="hintp">Drag sideways to pan · pinch or +/- to zoom</div>
+    <button class="acont" id="acont" aria-label="Continue past the map"><span>Continue</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="zhint" id="zhint"><span></span></div>
     <aside class="info" id="info"><div id="infoBody"></div></aside>
   </section>
 
   <div class="page">
   <section class="band" id="method">
     <div class="wrap">
-      <div class="eyebrow">How these numbers are produced</div>
+      <div class="apxopen">
+        <div class="eyebrow">Appendix</div>
+        <h2>The record behind the atlas</h2>
+        <p class="lede">Everything above is the story. What follows is the evidence: how the figures
+        are produced, the full chronology, and what we have not fixed.</p>
+      </div>
+      <div class="eyebrow">Appendix i · How these numbers are produced</div>
       <h2>Read this before the figures</h2>
       <p class="lede">Country rows are entered by the directors who run the programs, then reconciled
       centrally. Nothing has been rounded for presentation.</p>
       <div class="sgrid" id="sgrid"></div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:34px;margin-top:40px">
-        <div><h3>What verified means</h3>
-          <p>A figure marked verified has been checked against its source and the date of that check is
-          recorded. Hover any figure to see its source, what it supersedes, and when a human last
-          confirmed it. A figure marked estimate has a known gap, named at the foot of this page.</p></div>
+        <div><h3>Verified and estimate</h3>
+          <p>Verified means a person opened the record the number came from, confirmed it, and wrote
+          down the date they did it. Estimate means the number is real but we know it is incomplete,
+          and Appendix iii says exactly what is missing from it. Hover any figure to see where it came
+          from and when it was last checked.</p></div>
         <div><h3>Direct and indirect</h3>
           <p>Programming went deep in some places and wide in others, because it had to be adaptable.
           Meals and outreach schooling ran in small pods. Small loans went out at scale during COVID.
           Mozambique reads 371 direct against 84,330 indirect. The Netherlands runs the other way,
           because Dignita trains people one cohort at a time.</p></div>
         <div><h3>Why the rows do not sum</h3>
-          <p>The country rows come to 427,625 against a canonical total of 491,042. The difference sits
-          in a three-year reporting gap and in historic rows consolidated before the current tracker
-          existed. It is listed as an open gap below.</p></div>
+          <p>The country rows come to 429,438 against a canonical total of 491,042. The difference sits
+          in the 2015 to 2017 reporting gap, and in a 19,644 carry-forward from 2007 to 2017 that was
+          consolidated into one line before the current tracker existed and was never split by country.
+          Appendix iii lists it as still open.</p></div>
       </div>
     </div>
   </section>
 
   <section class="band" id="impact" style="padding-top:20px">
     <div class="wrap">
-      <div class="eyebrow">Impact</div>
+      <div class="eyebrow">Appendix ii · The full record</div>
       <h2>Everything, in the order it happened</h2>
-      <p class="lede">People, planet and social innovation are one story, not three programs.</p>
+      <p class="lede">People, planet and social innovation are one story, not three programs.
+      <span id="tlcount">54</span> entries, from the book that started it to the work running now.</p>
       <div class="filters" id="filters">
         <button class="f" data-f="all" aria-pressed="true">Everything</button>
         <button class="f" data-f="people" aria-pressed="false">People</button>
@@ -492,10 +580,12 @@ nav.dk .brand span{color:rgba(247,242,233,.7)}
       </div>
       <div class="tl" id="tl"></div>
       <div class="undated">
-        <div class="eyebrow" style="margin-bottom:12px">Not yet dated</div>
-        <p style="margin-bottom:18px">The tracker records reporting periods, not program start dates.
-        These are real and counted in the totals above, but the year they began is not held anywhere
-        we could cite.</p>
+        <div class="eyebrow" style="margin-bottom:12px">Where the years come from</div>
+        <p style="margin-bottom:18px">The tracker records reporting periods, not program histories. It
+        can say how many people a country reached in a given year, but not what year the work began.
+        Every start date here was reconstructed in November 2026 with the founders and the country
+        directors who opened each program. It is the best record that exists. It is also memory, and we
+        would rather say so than imply a document we do not have.</p>
         <div id="undated"></div>
       </div>
     </div>
@@ -503,7 +593,7 @@ nav.dk .brand span{color:rgba(247,242,233,.7)}
 
   <section class="band dark" id="gaps">
     <div class="wrap">
-      <div class="eyebrow">Where we fall short</div>
+      <div class="eyebrow">Appendix iii · Where we fall short</div>
       <h2>Eight things we have not fixed</h2>
       <p class="lede" style="color:rgba(247,242,233,.66)">Every organization has these. Most keep them
       in an internal file. Each gap is listed with the reason it is still open, because a reason is the
@@ -595,9 +685,9 @@ function frame(now){requestAnimationFrame(frame);
 
 /* ---------- chapters ---------- */
 const CH=[{id:'c0',k:'Title'},{id:'c1',k:'People',num:'491,042',ly:'ly1'},
- {id:'c2',k:'Planet',num:'505,409',ly:'ly2'},{id:'c3',k:'Conservation',num:'753',ly:'ly3'},
- {id:'c4',k:'Social',ly:'ly4'},{id:'atlas',k:'Atlas'},{id:'method',k:'Method'},
- {id:'impact',k:'Impact'},{id:'gaps',k:'Gaps'}];
+ {id:'c2',k:'Conservation',num:'753',ly:'ly2'},{id:'c3',k:'Ventures',ly:'ly3'},
+ {id:'c4',k:'Trees',num:'505,409',ly:'ly4'},{id:'atlas',k:'Atlas'},{id:'method',k:'Appendix i'},
+ {id:'impact',k:'Appendix ii'},{id:'gaps',k:'Appendix iii'}];
 const els=CH.map(c=>document.getElementById(c.id));
 const L=['ly1','ly2','ly3','ly4'].map(i=>document.getElementById(i));
 const HL=[...document.querySelectorAll('.hl')],MS=[...document.querySelectorAll('.ms')];
@@ -622,7 +712,7 @@ function tick(){
   P[i]=clamp((-r.top)/(el.offsetHeight-vh),0,1)}
  /* sun rises through the title chapter, then becomes the circle */
  const p0=P[0],sz=Math.min(window.innerWidth,vh)*0.5;
- const sunBottom=-sz*0.42+sunT*vh*0.62;
+ const sunBottom=-sz*0.42+sunT*vh*(window.innerWidth<760?0.52:0.62);
  sun.style.width=sz+'px';sun.style.height=sz+'px';
  sun.style.bottom=sunBottom+'px';
  sun.style.opacity=clamp(1-P[1]/0.16,0,1);
@@ -643,14 +733,14 @@ function tick(){
  L.forEach(ly=>{const v=ly.querySelector('video');if(!v)return;const on=ly.style.opacity!=='0';if(on){if(v.paused)v.play().catch(()=>{})}else if(!v.paused)v.pause()});
  /* particles follow the active number chapter */
  if(ready){
-  if(act>=1&&act<=3){setNum(CH[act].num);
+  if(act>=1&&act<=4&&CH[act].num){setNum(CH[act].num);
    onTo=clamp((P[act]-0.13)/0.17,0,1)*clamp(1-(P[act]-0.80)/0.15,0,1)}
   else onTo=0}
  /* a chapter's words arrive only once its scene is full bleed */
  for(let i=0;i<5;i++)els[i].querySelector('.pin')
   .classList.toggle('lit',P[i]>(i?0.46:-0.01)&&P[i]<0.92);
  const aTop=els[5].getBoundingClientRect().top;
- if(act===5&&!autoP&&typeof atlasDemo==='function')atlasDemo();
+ if(act===5&&!autoP&&typeof atlasEnter==='function')atlasEnter();
  stage.style.opacity=aTop<vh*0.45?0:1;
  vis=aTop>0;
  const dk=(act>=1&&act<=5)||act===8;
@@ -664,7 +754,8 @@ function tick(){
 window.addEventListener('scroll',tick,{passive:true});
 
 /* ---------- it plays itself ---------- */
-let sunT=0,t_sun=performance.now(),autoP=true,seq=null,gliding=false,step=0;
+const RMOTION=matchMedia("(prefers-reduced-motion:reduce)").matches;
+let sunT=0,t_sun=performance.now(),autoP=!RMOTION,seq=null,gliding=false,step=0;
 const SUN_MS=4200, GLIDE_MS=2300, HOLD_MS=6500;
 let segStart=0,segDur=0;
 const ppEl=document.getElementById('pp');
@@ -683,7 +774,7 @@ function advance(){
  step++;
  if(step>=5){glide(els[5].offsetTop,GLIDE_MS);
   segStart=performance.now();segDur=GLIDE_MS+200;
-  seq=setTimeout(()=>{autoP=false;setBtn();if(typeof atlasDemo==='function')atlasDemo()},GLIDE_MS+200);return}
+  seq=setTimeout(()=>{autoP=false;setBtn();if(typeof atlasEnter==='function')atlasEnter()},GLIDE_MS+200);return}
  glide(holdAt(step),GLIDE_MS);
  schedule(GLIDE_MS+HOLD_MS)}
 function stopAuto(){if(!autoP)return;autoP=false;gliding=false;clearTimeout(seq);if(ppRing)ppRing.style.strokeDashoffset='131.95';setBtn()}
@@ -720,6 +811,7 @@ function markers(){const m=MOB(),RC=m?15:27,RMIN=m?2.4:3.4,RNO=m?3:4.4,HIT=m?15:
  const r=hp?Math.max(RMIN,Math.sqrt(c.ppl.t/maxP)*RC):RNO;
  return `<g class="mk" data-c="${c.n}" transform="translate(${x.toFixed(1)},${y.toFixed(1)})">
   <circle class="${hp?'g':'t'}" r="${r.toFixed(1)}"></circle>
+  <circle class="pulse" r="${r.toFixed(1)}"></circle>
   <circle class="core" r="${hp?1.3:1.0}"></circle>
   <circle class="hit" r="${Math.max(r+(m?5:0),HIT).toFixed(1)}"></circle></g>`}).join('')}
 function drawMap(paths){
@@ -759,10 +851,24 @@ function zoomAt(ev,factor){const p=ptToMap(ev);
 function setMapMode(){const s=wsvg();if(!s)return;
  s.setAttribute('preserveAspectRatio',MOB()?'xMidYMid slice':'xMidYMid meet');
  view=MOB()?{...VB_MOB}:{...VB_FULL}; clampView(); applyVB();}
+const MODK=/Mac|iPhone|iPad|iPod/.test(navigator.platform||navigator.userAgent||'')?'⌘':'Ctrl';
+const zhintEl=document.getElementById('zhint');
+if(zhintEl)zhintEl.querySelector('span').textContent='Hold '+MODK+' to zoom · scroll to keep reading';
+const hintpEl=document.getElementById('hintp');
+if(hintpEl)hintpEl.textContent=window.innerWidth<760?'Drag to pan · pinch to zoom'
+ :'Drag to pan · pinch, +/- or '+MODK+' + scroll to zoom';
+let zhTimer=0;
+function flashZoomHint(){if(!zhintEl)return;zhintEl.classList.add('on');
+ clearTimeout(zhTimer);zhTimer=setTimeout(()=>zhintEl.classList.remove('on'),1150)}
+const acontEl=document.getElementById('acont');
+if(acontEl)acontEl.addEventListener('click',()=>{const t=document.getElementById('method');
+ if(t)t.scrollIntoView({behavior:'smooth'})});
 function initPanZoom(){
  const s=wsvg();if(!s)return; setMapMode();
  const pts=new Map(); let drag=false,pend=false,sx=0,sy=0,ox=0,oy=0,pinchD=0;
- s.addEventListener('wheel',e=>{e.preventDefault();zoomAt(e,e.deltaY<0?1.14:1/1.14)},{passive:false});
+ s.addEventListener('wheel',e=>{
+  if(!(e.ctrlKey||e.metaKey)){flashZoomHint();return}   /* plain wheel keeps scrolling the page */
+  e.preventDefault();zoomAt(e,e.deltaY<0?1.14:1/1.14)},{passive:false});
  s.addEventListener('pointerdown',e=>{if(typeof cancelDemo==='function')cancelDemo();pts.set(e.pointerId,{x:e.clientX,y:e.clientY});
   if(pts.size>=2){pend=false;drag=false;const v=[...pts.values()];pinchD=Math.hypot(v[0].x-v[1].x,v[0].y-v[1].y);try{s.setPointerCapture(e.pointerId)}catch(_){}return}
   sx=e.clientX;sy=e.clientY;ox=view.x;oy=view.y;
@@ -787,7 +893,8 @@ function initPanZoom(){
  if(zout)zout.onclick=()=>zoomAt(ctr(),1/1.4)}
 function flyTo(lon,lat){const cx=px(lon),cy=py(lat);
  const tw=MOB()?440:440, th=tw*0.402;
- const tx=MOB()?cx-tw/2:cx-tw*0.40, ty=cy-th/2;
+ const tx=MOB()?cx-tw/2:cx-tw*0.40;
+ const ty=MOB()?cy-th*0.22:cy-th/2;   /* lift it clear of the bottom sheet */
  const f={...view},t0=performance.now(),D=620, T={x:tx,y:ty,w:tw,h:th};
  (function hop(n){const q=Math.min(1,(n-t0)/D),e=1-Math.pow(1-q,3);
   view.x=f.x+(T.x-f.x)*e; view.y=f.y+(T.y-f.y)*e; view.w=f.w+(T.w-f.w)*e;
@@ -865,16 +972,132 @@ function openElement(i){const e=elements(curC)[i];
  document.getElementById('bk').addEventListener('click',()=>openCountry(curC.n))}
 function closeInfo(){infoEl.classList.remove('on');resetView();
  document.querySelectorAll('.mk,.cpath').forEach(g=>g.classList.remove('sel'))}
+/* ---- globe that unrolls into the map ---- */
+let WRAW=null,morphRan=false,G=null,morphKill=false;
+const GC={x:500,y:250},GR=190,GD=Math.PI/180;
+function gRings(d,skip){const out=[];
+ for(const sp of d.split('M')){if(!sp.trim())continue;
+  const parts=sp.replace(/Z/g,'').split('L'),pts=[];
+  for(let i=0;i<parts.length;i++){
+   if(skip>1&&i%skip&&i!==parts.length-1)continue;
+   const m=parts[i].trim().split(/\s+/);if(m.length!==2)continue;
+   const x=+m[0],y=+m[1];if(isNaN(x)||isNaN(y))continue;
+   pts.push([x/1000*360-180,90-y/500*180])}
+  if(pts.length>=3)out.push(pts)}
+ return out}
+function gproj(lon,lat,e,rot){const l=(lon-rot)*GD,p=lat*GD,cp=Math.cos(p);
+ const ox=GC.x+GR*cp*Math.sin(l),oy=GC.y-GR*Math.sin(p);
+ const ex=(lon+180)/360*1000,ey=(90-lat)/180*500;
+ return [ox+(ex-ox)*e,oy+(ey-oy)*e,cp*Math.cos(l)]}
+function gBuild(){
+ const sv=document.getElementById('gmorph');if(!sv||!WRAW)return null;
+ const rings=[],delay=[];
+ WRAW.forEach(c=>gRings(c.d,2).forEach(r=>{rings.push(r);
+  let lo=0;for(const p of r)lo+=p[0];lo/=r.length;
+  delay.push(Math.min(1,Math.abs(lo)/180)*0.30)}));
+ const grat=[];
+ for(let la=-60;la<=60;la+=30){const r=[];for(let lo=-180;lo<=180;lo+=5)r.push([lo,la]);grat.push(r)}
+ for(let lo=-180;lo<180;lo+=30){const r=[];for(let la=-85;la<=85;la+=5)r.push([lo,la]);grat.push(r)}
+ sv.setAttribute('preserveAspectRatio',MOB()?'xMidYMid slice':'xMidYMid meet');
+ sv.innerHTML='<circle class="gsphere" cx="500" cy="250" r="190"/>'
+  +grat.map(()=>'<path class="ggrat"/>').join('')
+  +rings.map(()=>'<path class="gland"/>').join('')
+  +'<circle class="grim" cx="500" cy="250" r="190"/>';
+ return {rings,delay,grat,gratEl:[...sv.querySelectorAll('.ggrat')],
+  landEl:[...sv.querySelectorAll('.gland')],
+  sphere:sv.querySelector('.gsphere'),rim:sv.querySelector('.grim'),sv};}
+const EIO=t=>t<0.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+function gFrame(t,rot){if(!G)return;
+ const eMain=EIO(t);
+ for(let i=0;i<G.landEl.length;i++){
+  const r=G.rings[i],dl=G.delay[i];
+  const lt=Math.min(1,Math.max(0,(t-dl)/(1-0.30)));
+  const e=EIO(lt);
+  let d='',f=0;
+  for(let j=0;j<r.length;j++){const p=gproj(r[j][0],r[j][1],e,rot);
+   f+=p[2];d+=(j?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)}
+  const el=G.landEl[i];el.setAttribute('d',d+'Z');
+  el.setAttribute('opacity',(f/r.length<0?0.10+0.90*e:1).toFixed(2))}
+ for(let i=0;i<G.gratEl.length;i++){const r=G.grat[i];let d='';
+  for(let j=0;j<r.length;j++){const p=gproj(r[j][0],r[j][1],eMain,rot);
+   if(p[2]<0&&eMain<0.5){d+='';continue}
+   d+=(d?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)}
+  G.gratEl[i].setAttribute('d',d);
+  G.gratEl[i].setAttribute('opacity',(0.40*(1-eMain)).toFixed(2))}
+ const fade=1-Math.min(1,eMain/0.5);
+ G.sphere.setAttribute('opacity',(fade*fade).toFixed(2));
+ G.rim.setAttribute('opacity',(0.85*fade).toFixed(2));
+ G.rim.setAttribute('r',(GR*(1+0.55*eMain)).toFixed(1));
+ const T=MOB()?VB_MOB:VB_FULL,k=MOB()?3.8:1;
+ const S={x:GC.x-T.w*k/2,y:GC.y-T.h*k/2,w:T.w*k,h:T.h*k};
+ const e=eMain;
+ const vx=S.x+(T.x-S.x)*e,vy=S.y+(T.y-S.y)*e,vw=S.w+(T.w-S.w)*e,vh2=S.h+(T.h-S.h)*e;
+ G.sv.setAttribute('viewBox',vx.toFixed(1)+' '+vy.toFixed(1)+' '+vw.toFixed(1)+' '+vh2.toFixed(1))}
+function gEnd(){const at=document.getElementById('atlas');
+ if(at){at.classList.remove('morphing');at.classList.add('landing');
+  document.querySelectorAll('.mk').forEach((m,i)=>m.style.animationDelay=(i%14*0.035).toFixed(3)+'s');
+  setTimeout(()=>at.classList.remove('landing'),1400)}
+ const sv=document.getElementById('gmorph');
+ if(sv){sv.classList.add('gone');setTimeout(()=>{if(sv.parentNode)sv.innerHTML=''},500)}
+ G=null}
+function gPrime(){
+ const at=document.getElementById('atlas');
+ if(RMOTION||!WRAW){if(at)at.classList.remove('morphing');return}
+ G=gBuild();
+ if(!G){if(at)at.classList.remove('morphing');return}
+ gFrame(0,14);}
+function runGlobeMorph(after){
+ morphRan=true;
+ if(RMOTION||!WRAW){gEnd();after&&after();return}
+ if(!G)G=gBuild();
+ if(!G){gEnd();after&&after();return}
+ const at=document.getElementById('atlas'); if(at)at.classList.add('morphing');
+ const SPIN=1250,MORPH=2100,t0=performance.now();
+ gFrame(0,14);
+ (function hop(n){
+  if(morphKill){gEnd();after&&after();return}
+  const el=n-t0;
+  const t=el<SPIN?0:Math.min(1,(el-SPIN)/MORPH);
+  gFrame(t,14+el*0.022);
+  if(t<1)requestAnimationFrame(hop);
+  else{gEnd();after&&after()}})(t0)}
+let morphBusy=false,worldWaiters=[],worldSettled=false;
+function worldReady(){worldSettled=true;const q=worldWaiters;worldWaiters=[];q.forEach(f=>f())}
+function whenWorld(f){
+ if(worldSettled||WRAW||RMOTION){f();return}
+ worldWaiters.push(f);
+ setTimeout(()=>{const i=worldWaiters.indexOf(f);   /* never hang on a dead connection */
+  if(i>-1){worldWaiters.splice(i,1);f()}},4000)}
+function atlasEnter(){
+ if(morphBusy)return;                              /* a morph is in flight: let it finish */
+ if(morphRan){if(typeof atlasDemo==='function')atlasDemo();return}
+ morphBusy=true;                                   /* claim it now, before the wait */
+ whenWorld(()=>runGlobeMorph(()=>{morphBusy=false;
+  if(typeof atlasDemo==='function')atlasDemo()}))}
+
 /* ---- one-time auto preview: shows a marker opening the side panel ---- */
 let demoRun=false,demoTimer=null,userTookOver=false;
 function cancelDemo(){userTookOver=true;if(demoTimer){clearTimeout(demoTimer);demoTimer=null}}
+function atlasEstablish(){
+ if(morphRan)return;
+ const T=MOB()?{...VB_MOB}:{...VB_FULL};
+ if(RMOTION){view={...T};clampView();applyVB();return}
+ const cx=px(28),cy=py(2),w0=Math.max(150,T.w*0.42),h0=w0*0.402;
+ view={x:cx-w0/2,y:cy-h0/2,w:w0,h:h0};clampView();applyVB();
+ const s0={...view},t0=performance.now(),D=1550;
+ (function hop(n){if(userTookOver)return;
+  const q=Math.min(1,(n-t0)/D),e=1-Math.pow(1-q,2.6);
+  view.x=s0.x+(T.x-s0.x)*e;view.y=s0.y+(T.y-s0.y)*e;view.w=s0.w+(T.w-s0.w)*e;
+  clampView();applyVB();if(q<1)requestAnimationFrame(hop)})(t0)}
 function atlasDemo(){
  if(demoRun||userTookOver)return;demoRun=true;
+ atlasEstablish();
  const c=byName['Uganda']||C.find(x=>x.ppl&&x.ppl.t);if(!c)return;
  demoTimer=setTimeout(()=>{demoTimer=null;if(userTookOver)return;
   openCountry(c.n);
-  demoTimer=setTimeout(()=>{demoTimer=null;if(userTookOver)return;closeInfo();},4200);
- },1200);}
+  demoTimer=setTimeout(()=>{demoTimer=null;if(userTookOver)return;closeInfo();},
+   MOB()?5200:4200);
+ },MOB()?1300:1900);}
 
 /* ---------- page ---------- */
 document.getElementById('sgrid').innerHTML=STATS.map(s=>
@@ -892,6 +1115,7 @@ function renderTL(f){const rows=TL.filter(e=>f==='all'||e[3]===f);
     ${e[5]==='W'?'<span class="pill pend">Pending</span>':''}</div>
     <div class="emeta">${e[2]} · <b>${e[4]}</b></div>
     <div class="edesc">${e[6]}</div></div>`).join('')}</div></div>`}).join('')}
+{const tc=document.getElementById('tlcount');if(tc)tc.textContent=TL.length;}
 document.getElementById('undated').innerHTML=UNDATED.map(u=>
  `<div class="ev" style="padding-bottom:16px"><div class="ehead">
    <div class="ename" style="font-size:18px">${u[0]}</div>
@@ -904,6 +1128,16 @@ renderTL('all');
 document.getElementById('gapslist').innerHTML=GAPS.map(g=>
  `<div class="gap"><div><div class="gtitle">${g[0]}</div><div class="gsub">${g[1]}</div></div>
   <div class="gwhy"><span>Why it is still open</span>${g[2]}</div></div>`).join('');
+
+/* hero figures count up */
+(function(){const els=[...document.querySelectorAll('.hfig b[data-n]')];if(!els.length)return;
+ const fin=el=>el.textContent=(+el.dataset.n).toLocaleString('en-US');
+ if(RMOTION){els.forEach(fin);return}
+ els.forEach(el=>el.textContent='0');
+ setTimeout(()=>{const t0=performance.now(),D=1700;
+  (function hop(n){const q=Math.min(1,(n-t0)/D),e=1-Math.pow(1-q,3);
+   els.forEach(el=>el.textContent=Math.round((+el.dataset.n)*e).toLocaleString('en-US'));
+   if(q<1)requestAnimationFrame(hop)})(t0)},900);})();
 
 /* intro overlay + share */
 (function(){
@@ -924,7 +1158,7 @@ const SEARCH_IDX=(()=>{const idx=[],cv=new Set();
  idx.push({label:'People served',sub:'491,042 since 2007',kind:'scene',scene:'c1',kw:'people served supported survivors trafficking slavery livelihoods prevention reached half a million'});
  idx.push({label:'Trees planted',sub:'505,409 since 2022',kind:'scene',scene:'c2',kw:'trees planted reforestation forest planet carbon tree-nation usambara drc half a million'});
  idx.push({label:'Rainforest conserved',sub:'753 sq mi, Madre de Dios',kind:'scene',scene:'c3',kw:'rainforest amazon forest conserved protected conservation square miles brazil nut afimad peru madre de dios'});
- idx.push({label:'Ventures built',sub:'Twenty-one social innovations',kind:'scene',scene:'c4',kw:'ventures social innovation enterprise business rebbl built funded out-create'});
+ idx.push({label:'Ventures built',sub:'Twenty-two ventures and platforms',kind:'scene',scene:'c3',kw:'ventures social innovation enterprise business rebbl built funded out-create'});
  return idx;})();
 const SEARCH_STOP=new Set('how many much what which where who whom when why is are was the a an and or of in on for to our we i you have has had do does show me tell about number count stats data impact tracker question questions did'.split(' '));
 function searchClean(q){return (q||'').toLowerCase().replace(/[^a-z0-9 ]/g,' ').split(/\s+/).filter(w=>w&&!SEARCH_STOP.has(w));}
@@ -1061,10 +1295,23 @@ function attachSearch(root){if(!root)return;
  aj.addEventListener('click',jump);
  aj.addEventListener('touchend',e=>{e.preventDefault();jump()},{passive:false});})();
 
-fetch('world.json').then(r=>r.json()).then(w=>
+fetch('world.json').then(r=>r.json()).then(w=>{WRAW=w;return w}).then(w=>{
  drawMap(w.map(c=>{const d=byMap[c.n];
-  return `<path class="cpath${d?' has':''}" ${d?`data-c="${d.n}"`:''} d="${c.d}"></path>`}).join('')))
- .catch(()=>drawMap(''));
+  return `<path class="cpath${d?' has':''}" ${d?`data-c="${d.n}"`:''} d="${c.d}"></path>`}).join(''));
+ gPrime();worldReady();})
+ .catch(()=>{drawMap('');gPrime();worldReady();});
+
+/* safety net: entering the atlas always starts the sequence, however you got there */
+(function(){const at=document.getElementById('atlas');if(!at||!('IntersectionObserver'in window))return;
+ let idle=null;
+ const io=new IntersectionObserver(es=>{for(const e of es){
+  if(e.intersectionRatio>=0.72){
+   clearTimeout(idle);                 /* let the scroll come to rest first */
+   idle=setTimeout(()=>{io.disconnect();
+    if(typeof atlasEnter==='function')atlasEnter()},260);
+  }else{clearTimeout(idle);idle=null}}},
+  {threshold:[0,0.4,0.72,0.9]});
+ io.observe(at);})();
 
 if(gl){build();fill(posB,'491,042');curTxt='491,042';
  for(let i=0;i<N*2;i++)posA[i]=posB[i];wmix=1;
@@ -1079,3 +1326,5 @@ if(document.fonts&&document.fonts.load){document.fonts.load('300 120px Newsreade
 </script>
 </body>
 </html>
+
+</body></html>
